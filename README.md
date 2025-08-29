@@ -12,6 +12,7 @@ A simple announcement system for residents to create, view, and manage community
 ## 📋 Features
 
 ### Core Features
+
 - ✅ Create announcements with title (required) and description (optional)
 - ✅ View all announcements in a feed (newest first)
 - ✅ Change announcement status between 'active' and 'closed'
@@ -20,6 +21,7 @@ A simple announcement system for residents to create, view, and manage community
 - ✅ Loading states and disabled controls
 
 ### Nice-to-Have Features
+
 - 🔄 Filter announcements by status (Active/Closed)
 - 📊 Display counters for active/closed announcements
 - 📅 Automatic timestamps and sorting
@@ -27,18 +29,21 @@ A simple announcement system for residents to create, view, and manage community
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js (v16+ recommended)
 - npm or yarn
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/basera-tushar-langer/interview
    cd interview
    ```
 
 2. **Install Backend Dependencies**
+
    ```bash
    cd backend
    npm install
@@ -53,17 +58,21 @@ A simple announcement system for residents to create, view, and manage community
 ### Running the Application
 
 1. **Start Backend (Terminal 1)**
+
    ```bash
    cd backend
    npm run start:dev
    ```
+
    Backend runs on: http://localhost:4000
 
 2. **Start Frontend (Terminal 2)**
+
    ```bash
    cd frontend
    npm run dev
    ```
+
    Frontend runs on: http://localhost:5173
 
 3. **Open your browser** and navigate to http://localhost:5173
@@ -71,13 +80,15 @@ A simple announcement system for residents to create, view, and manage community
 ## 🛠️ API Reference
 
 ### Base URL
+
 ```
 http://localhost:4000
 ```
 
 ### Data Types
+
 ```typescript
-type Status = 'active' | 'closed';
+type Status = "active" | "closed";
 
 interface Announcement {
   id: string;
@@ -91,6 +102,7 @@ interface Announcement {
 ### Endpoints
 
 #### Create Announcement
+
 ```http
 POST /announcements
 Content-Type: application/json
@@ -102,6 +114,7 @@ Content-Type: application/json
 ```
 
 **Response:**
+
 ```json
 {
   "id": "1693123456789",
@@ -113,11 +126,13 @@ Content-Type: application/json
 ```
 
 #### List Announcements
+
 ```http
 GET /announcements
 ```
 
 **Response:**
+
 ```json
 [
   {
@@ -131,6 +146,7 @@ GET /announcements
 ```
 
 #### Update Announcement Status
+
 ```http
 PATCH /announcements/:id
 Content-Type: application/json
@@ -141,6 +157,7 @@ Content-Type: application/json
 ```
 
 **Response:**
+
 ```json
 {
   "id": "1693123456789",
@@ -194,11 +211,12 @@ interview/
    - AnnouncementsService manages in-memory data store
 
 2. **Define DTOs**
+
    ```typescript
    // CreateAnnouncementDto
    { title: string; description?: string }
-   
-   // UpdateAnnouncementStatusDto  
+
+   // UpdateAnnouncementStatusDto
    { status: 'active' | 'closed' }
    ```
 
@@ -211,7 +229,7 @@ interview/
    ```typescript
    // main.ts
    app.enableCors({
-     origin: 'http://localhost:5173'
+     origin: "http://localhost:5173",
    });
    ```
 
@@ -264,6 +282,7 @@ interview/
 ## 🚀 Available Scripts
 
 ### Backend
+
 ```bash
 npm run start         # Production
 npm run start:dev     # Development with hot reload
@@ -272,6 +291,7 @@ npm run test          # Run tests
 ```
 
 ### Frontend
+
 ```bash
 npm run dev           # Development server
 npm run build         # Build for production
